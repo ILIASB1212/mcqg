@@ -1,0 +1,6 @@
+MCQ,Choices,Correct
+What is the main goal of supervised learning?,a: To find structures in unlabelled data | b: To build a mathematical model of data with inputs and desired outputs | c: To interact with a dynamic environment and maximize rewards | d: To discover hidden patterns in data,b
+Which type of learning algorithm does clustering belong to?,a: Supervised learning | b: Unsupervised learning | c: Reinforcement learning | d: Active learning,b
+What is the central application of unsupervised machine learning?,a: Regression | b: Classification | c: Clustering | d: Active learning,c
+Which field of study focuses on exploratory data analysis via unsupervised learning?,a: Data mining | b: Deep learning | c: Reinforcement learning | d: Predictive analytics,a
+What is the key difference between supervised and unsupervised learning?,"a: Supervised learning uses labelled data, while unsupervised learning does not | b: Supervised learning focuses on reinforcement, while unsupervised learning does not | c: Supervised learning is only used in classification, while unsupervised learning is used in regression | d: Unsupervised learning requires a 'teacher' to provide feedback",a
