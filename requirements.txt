@@ -5,3 +5,7 @@ python-dotenv
 PyPDF2
 setuptools
 langchain_community
+langchain
+pandas
+langchain_openai
+re
