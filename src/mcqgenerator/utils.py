@@ -5,6 +5,8 @@ import json
 
 
 
+import PyPDF2
+
 def read_file(file):
     filename = file.name.lower()
 
@@ -14,19 +16,29 @@ def read_file(file):
             full_text = []
             for page in reader.pages:
                 text = page.extract_text()
-                full_text.append(text)
+                if text:
+                    # Replace problematic characters
+                    text = text.encode('utf-8', errors='replace').decode('utf-8')
+                    full_text.append(text)
             return "\n".join(full_text)
         except Exception as e:
             raise Exception(f"Error reading PDF: {e}")
 
     elif filename.endswith(".txt"):
         try:
-            return file.read().decode("utf-8")
+            text = ""
+            while True:
+                chunk = file.read(1024 * 1024)  # Read 1 MB at a time
+                if not chunk:
+                    break
+                text += chunk.decode("utf-8", errors='ignore')  # Ignore decoding errors
+            return text
         except Exception as e:
             raise Exception(f"Error reading TXT file: {e}")
 
     else:
         raise Exception("Unsupported file format. Only PDF and TXT are supported.")
+
 
     
 def get_table_data(quiz_str):
